@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const pageTitle = `Free Government Phone - Enhanced Lifeline Program for Tribal Communities`;
+const pageDescription = `Get enhanced free government phone benefits on tribal lands. Tribal members receive extra data, better devices, and specialized support through the enhanced Lifeline program.`;
+const canonicalURL = `${siteURL}/tribal-programs`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "url": canonicalURL,
+  "datePublished": "2025-12-11",
+  "dateModified": "2025-12-11",
+  "author": {
+    "@type": "Organization",
+    "name": siteName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteName,
+    "url": siteURL
+  }
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes tribal Lifeline benefits different from regular benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tribal members receive enhanced benefits including extra data allowances, better device options, and specialized customer support designed for rural connectivity challenges."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "Do I need to live on a reservation to qualify for enhanced benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You must live on federally recognized tribal lands or be an enrolled member of a federally recognized tribe to qualify for enhanced tribal Lifeline benefits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a smartphone through the tribal program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the enhanced tribal program often provides better smartphone options with larger screens, longer battery life, and features designed for areas with limited connectivity."
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalURL}
+  jsonLd={[jsonLd, faqJsonLd]}
+>
+  <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-100 py-3">
+      <div class="container mx-auto px-4">
+        <ol class="flex space-x-2 text-sm">
+          <li><a href="/" class="text-[var(--color-primary)] hover:underline">Home</a></li>
+          <li class="text-gray-500">/</li>
+          <li class="text-gray-700">Tribal Programs</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12 px-4">
+      <div class="container mx-auto max-w-4xl text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Free Government Phone</h1>
+        <p class="text-xl text-gray-700 mb-8">Enhanced Lifeline benefits for tribal communities with extra data, better devices, and specialized support</p>
+        <a href="/apply" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg">Get Your Enhanced Tribal Benefits</a>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-12 px-4 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <div class="prose max-w-none">
+          <p class="text-lg leading-relaxed mb-6">
+            Tribal communities receive enhanced benefits through the Free Government Phone program, designed specifically for the unique connectivity challenges faced on tribal lands. These enhanced Lifeline benefits recognize that tribal areas often have limited cell tower coverage and higher costs for telecommunications infrastructure.
+          </p>
+          
+          <p class="text-lg leading-relaxed mb-6">
+            The enhanced tribal program goes beyond standard Lifeline benefits by providing additional monthly data allowances, priority customer support, and access to devices specifically chosen for rural and remote area performance. Members of federally recognized tribes living on tribal lands can access these special benefits at no cost.
+          </p>
+          
+          <p class="text-lg leading-relaxed">
+            Getting your Free Government Phone through the tribal enhancement program means you receive not just basic phone service, but a comprehensive communication solution designed to work effectively in challenging geographic areas. The program acknowledges the sovereignty of tribal nations while ensuring essential connectivity for economic development, healthcare access, education, and emergency services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tribal Benefits Section -->
+    <section id="tribal-benefits" class="py-12 px-4 bg-gray-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-12" style="color: var(--color-primary)">Enhanced Benefits for Tribal Members</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center" style="background-color: var(--color-primary)">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Extra Monthly Data</h3>
+            <p class="text-gray-700">Tribal members receive additional data allowances beyond standard Lifeline benefits to support remote work, education, and telehealth needs.</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center" style="background-color: var(--color-primary)">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Priority Support</h3>
+            <p class="text-gray-700">Specialized customer service team trained in tribal community needs and geographic challenges of reservation areas.</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="w-16 h-16 rounded-full mb-4 flex items-center justify-center" style="background-color: var(--color-primary)">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Better Devices</h3>
+            <p class="text-gray-700">Access to smartphones with enhanced battery life, better signal reception, and durability features for rural environments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section id="what-you-get" class="py-12 px-4 bg-white">

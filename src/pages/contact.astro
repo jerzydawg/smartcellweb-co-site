@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = "Get Help Now - Free Government Phone Support & Contact";
+const description = "Need help with your free government phone application? Contact our support team for fast assistance with eligibility, applications, and phone activation.";
+const canonicalURL = new URL('/contact', siteURL).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL,
+  "mainEntity": {
+    "@type": "Organization",
+    "name": siteName,
+    "url": siteURL,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-555-0123",
+      "contactType": "customer support",
+      "availableLanguage": ["English", "Spanish"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly will I get help with my application?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our support team responds to all inquiries within 24 hours. For urgent application issues, we offer phone support Monday through Friday from 8 AM to 6 PM EST."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What information should I include in my support request?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Please include your full name, phone number, the carrier you're interested in, and a detailed description of your question or issue. This helps us provide the most accurate assistance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help me check if I qualify for a free phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Our team can review your eligibility for government phone programs. We'll check your qualification status and guide you through the application process step by step."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-50 py-3 border-b">
+    <div class="max-w-6xl mx-auto px-4">
+      <ol class="flex space-x-2 text-sm">
+        <li><a href="/" class="text-[var(--color-primary)] hover:underline">Home</a></li>
+        <li class="text-gray-500">/</li>
+        <li class="text-gray-700">Contact Us</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Intro Section -->
+    <section class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Free Government Phone</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Need help getting your free government phone? Our support team is here to guide you through every step of the application process and answer all your questions.
+      </p>
+      <div class="bg-green-50 border border-green-200 rounded-lg p-6 max-w-2xl mx-auto">
+        <h2 class="text-lg font-semibold text-green-800 mb-2">Fast Response Guaranteed</h2>
+        <p class="text-green-700">We respond to all support requests within 24 hours, and phone support is available Monday-Friday 8 AM to 6 PM EST.</p>
+      </div>
+    </section>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Contact Form Section -->
+      <section id="contact-form">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+        <p class="text-gray-600 mb-8">
+          Having trouble with your Free Government Phone application? Fill out the form below and our experienced support team will help you resolve any issues quickly. Whether you need help checking eligibility, completing your application, or activating your new phone, we're here to help.
+        </p>
+        
+        <form class="space-y-6" action="#" method="post">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+              <input type="text" id="firstName" name="firstName" required 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent">
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent">
+            </div>
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+            <input type="email" id="email" name="email" required 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">What do you need help with?</label>
+            <select id="subject" name="subject" required 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent">
+              <option value="">Select a topic</option>
+              <option value="eligibility">Check if I qualify for a free phone</option>
+              <option value="application">Help with my application</option>
+              <option value="carrier">Choose the right carrier</option>
+              <option value="activation">Phone activation issues</option>
+              <option value="technical">Technical support</option>
+              <option value="other">Other question</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+            <textarea id="message" name="message" rows="6" required 
+                      placeholder="Please provide details about your question or issue. The more information you include, the better we can help you."
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"></textarea>
+          </div>
+          
+          <button type="submit" 
+                  class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg">
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      <!-- Other Ways to Reach Us -->
+      <section id="other-ways-to-reach">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Other Ways to Get Help</h2>
+        <p class="text-gray-600 mb-8">
+          Need immediate assistance with your Free Government Phone? We offer multiple ways to get the support you need. Our team specializes in helping people navigate the application process and get connected with free phone service quickly.
+        </p>
+        
+        <div class="space-y-6">
+          <!-- Phone Support -->
+          <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: var(--color-primary)">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="

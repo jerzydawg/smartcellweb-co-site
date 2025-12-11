@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = `Free Government Phone - Lifeline Free Phone Program`;
+const description = `Get your Free Government Phone through the Lifeline program. Free monthly service, unlimited talk, text, and data. Apply instantly if you qualify for government assistance.`;
+const canonicalURL = `${siteURL}/lifeline-program`;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "url": canonicalURL,
+  "datePublished": "2025-12-11T00:00:00-05:00",
+  "dateModified": "2025-12-11T00:00:00-05:00",
+  "author": {
+    "@type": "Organization",
+    "name": siteName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteName,
+    "url": siteURL
+  }
+};
+
+const faqJsonLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Lifeline program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lifeline is a federal program that provides free phones and monthly service to qualified low-income households. The program includes unlimited talk, text, and data at no cost to approved participants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much data do I get with my free phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Lifeline providers offer unlimited data, though high-speed data may have monthly limits. You'll also get unlimited talk and text with your free government phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep my current phone number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can transfer your existing phone number to your new Lifeline phone when you activate your service."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLD)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLD)}></script>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-50 py-4">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center space-x-2 text-sm">
+        <a href="/" class="text-[var(--color-primary)] hover:underline">Home</a>
+        <span class="text-gray-500">›</span>
+        <span class="text-gray-700">Lifeline Program</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-12 max-w-4xl">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Free Government Phone</h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Get your free smartphone and monthly service through the Lifeline program. No credit checks, no contracts, and no monthly bills.</p>
+      <a href="/apply" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg inline-block">Check If You Qualify</a>
+    </div>
+
+    <!-- Introduction -->
+    <section class="mb-12">
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        The Lifeline program makes it possible for millions of Americans to stay connected with family, employers, and emergency services. When you get a <strong>Free Government Phone</strong> through Lifeline, you receive both a smartphone and free monthly service that includes unlimited calling, texting, and data.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        This federal program removes the financial barrier that prevents low-income households from having reliable phone service. Your <strong>Free Government Phone</strong> works just like any other smartphone, giving you access to apps, internet browsing, and all the features you need to stay connected.
+      </p>
+    </section>
+
+    <!-- What is Lifeline -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What is the Lifeline Program?</h2>
+      <div class="bg-blue-50 border-l-4 border-[var(--color-primary)] p-6 mb-6">
+        <p class="text-lg text-gray-700">
+          Lifeline is a government program that provides free phone service to qualifying low-income Americans. The program ensures that everyone has access to essential communication services, regardless of their financial situation.
+        </p>
+      </div>
+      <p class="text-gray-700 mb-4">
+        Started in 1985, the Lifeline program has evolved to meet modern communication needs. Today, participants can choose between traditional landline service or a <strong>Free Government Phone</strong> with wireless service that includes data for internet access.
+      </p>
+      <p class="text-gray-700">
+        The program is funded through the Universal Service Fund, which means taxpayers don't directly pay for these services. Instead, telecommunications companies contribute to the fund, making free phones and service available to those who need them most.
+      </p>
+    </section>
+
+    <!-- What You Get -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What You Get with Your Free Phone</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary)">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Free Smartphone</h3>
+          <p class="text-gray-600">Receive a modern Android smartphone with all the features you need, including camera, apps, and internet access.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary)">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Unlimited Talk & Text</h3>
+          <p class="text-gray-600">Make unlimited calls and send unlimited text messages every month at no charge.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary)">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">High-Speed Data</h3>
+          <p class="text-gray-600">Get monthly data allowance for browsing the web, using apps, and staying connected online.</p>
+        </div>
+        <div class="

@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = "Free Government Phone - Do You Qualify? Check Now";
+const description = "Check if you qualify for a free government phone in 2025. Learn income requirements, program eligibility, and required documents to get your free phone today.";
+const canonicalURL = new URL("/eligibility", siteURL);
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "url": canonicalURL.href,
+  "datePublished": "2025-12-11",
+  "dateModified": "2025-12-11",
+  "author": {
+    "@type": "Organization",
+    "name": siteName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteName,
+    "url": siteURL
+  }
+};
+
+const faqJsonLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the income limit for a free government phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Income limits vary by household size. For a single person, monthly income must be at or below $1,473. For a family of four, the limit is $3,050 per month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a free phone if I receive SNAP benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if you receive SNAP, Medicaid, SSI, or other qualifying benefits, you automatically qualify for a free government phone regardless of income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prove my eligibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need government-issued ID, proof of income or benefit participation, and proof of address. Examples include pay stubs, benefit award letters, or utility bills."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLD)} />
+  
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-50 py-4" aria-label="Breadcrumb">
+    <div class="max-w-6xl mx-auto px-4">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="/" class="text-[var(--color-primary)] hover:underline">Home</a></li>
+        <li class="text-gray-400">/</li>
+        <li class="text-gray-600">Eligibility</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Free Government Phone</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Check your eligibility for a free government phone program in minutes. Learn the requirements and get your phone today.</p>
+    </div>
+
+    <!-- Quick Eligibility Check -->
+    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-12 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Check Your Eligibility Now</h2>
+      <p class="text-gray-600 mb-6">Answer a few quick questions to see if you qualify</p>
+      <a href="/apply" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg inline-block">Start Eligibility Check</a>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-2">
+        <!-- Introduction -->
+        <section class="mb-10" id="intro">
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Getting a <strong>Free Government Phone</strong> is easier than you think. The Lifeline and ACP programs help millions of Americans stay connected with free phones and monthly service. Whether you're struggling to pay phone bills or need reliable communication for work and family, these programs offer real solutions.
+          </p>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            You might qualify based on your income level or participation in government assistance programs. Many people don't realize they're eligible for a free phone until they check. The application process takes just minutes, and approved applicants receive their phone within days.
+          </p>
+        </section>
+
+        <!-- Income Eligibility -->
+        <section class="mb-10" id="income-eligibility">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Income Requirements for Your Free Phone</h2>
+          <p class="text-gray-700 mb-6">
+            Your household income must be at or below 135% of the Federal Poverty Guidelines to qualify for a <strong>Free Government Phone</strong>. Here are the current monthly income limits:
+          </p>
+          
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border border-gray-300 rounded-lg">
+              <thead style="background-color: var(--color-primary)" class="text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left">Household Size</th>
+                  <th class="px-4 py-3 text-left">Monthly Income Limit</th>
+                  <th class="px-4 py-3 text-left">Annual Income Limit</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white">
+                <tr class="border-b">
+                  <td class="px-4 py-3">1 person</td>
+                  <td class="px-4 py-3 font-semibold">$1,473</td>
+                  <td class="px-4 py-3">$17,676</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="px-4 py-3">2 people</td>
+                  <td class="px-4 py-3 font-semibold">$1,984</td>
+                  <td class="px-4 py-3">$23,808</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-3">3 people</td>
+                  <td class="px-4 py-3 font-semibold">$2,495</td>
+                  <td class="px-4 py-3">$29,940</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="px-4 py-3">4 people</td>
+                  <td class="px-4 py-3 font-semibold">$3,006</td>
+                  <td class="px-4 py-3">$36,072</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">5+ people</td>
+                  <td class="px-4 py-3 font-semibold">Add $511 per person</td>
+                  <td class="px-4 py-3">Add $6,132 per person</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Program Eligibility -->
+        <section class="mb-10" id="program-eligibility">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Automatic Qualification Programs</h2>
+          <p class="text-gray-700 mb-6">
+            If you receive any of these benefits, you automatically qualify for a <strong>Free Government Phone</strong> regardless of your income level:
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h3 class="font-semibold text-green-800 mb-2">Federal Programs</h3>
+              <ul class="space-y-1 text-green-700">
+                <li>• SNAP (Food Stamps)</li>
+                <li>• Medicaid</li>
+                <li>• SSI (Supplemental Security Income)</li>
+                <li>• Federal Public Housing</li>
+                <li>• Veterans Pension</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h3 class="font-semibold text-blue-800 mb-2">State Programs</h3>
+              <ul class="space-y-1 text-

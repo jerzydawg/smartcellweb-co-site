@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const pageTitle = "Free Government Phone - ACP Free Internet & Phone";
+const pageDescription = "Get free internet and phone service through the ACP program. No credit check, instant approval available. Free smartphone, unlimited data, and monthly service included.";
+const canonicalURL = new URL("/acp-program", siteURL).href;
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalURL}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": pageTitle,
+    "description": pageDescription,
+    "author": {
+      "@type": "Organization",
+      "name": siteName
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteName,
+      "url": siteURL
+    },
+    "datePublished": "2025-12-11",
+    "dateModified": "2025-12-11",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the ACP program?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Affordable Connectivity Program provides up to $30 monthly discount on internet service and a one-time discount up to $100 to purchase a laptop, desktop computer, or tablet."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "Who qualifies for ACP benefits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You qualify if your household income is at or below 200% of Federal Poverty Guidelines, or if someone in your household participates in SNAP, Medicaid, WIC, or other qualifying programs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I apply for the ACP program?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can apply online at acpbenefit.org, by mail, or through participating internet service providers. You'll need to provide proof of eligibility and identity documents."
+        }
+      }
+    ]
+  })} />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-50 py-3" aria-label="Breadcrumb">
+    <div class="container mx-auto px-4">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="/" class="text-[var(--color-primary)] hover:underline">Home</a></li>
+        <li><span class="text-gray-500">›</span></li>
+        <li class="text-gray-700">ACP Program</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Free Government Phone
+      </h1>
+      <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+        Get free internet and phone service through the Affordable Connectivity Program. No monthly bills, no credit checks, and instant approval available for qualified households.
+      </p>
+      <a href="/apply" 
+         class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg inline-block">
+        Check Your Eligibility Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12">
+    
+    <!-- What is ACP Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What is the ACP Program?</h2>
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <p class="text-lg text-gray-700 mb-4">
+          The Affordable Connectivity Program (ACP) helps millions of Americans get connected to the internet and mobile phone services at no cost. Through this federal program, eligible households can receive a Free Government Phone along with high-speed internet access, making it easier to work, learn, and stay connected with family.
+        </p>
+        <p class="text-lg text-gray-700 mb-4">
+          Unlike other programs with complex requirements, the ACP streamlines the process to get you connected quickly. Most applicants receive approval within 24 hours and can start using their free services immediately. The program covers both internet connectivity and mobile phone service, ensuring you have everything needed for today's digital world.
+        </p>
+        <p class="text-lg text-gray-700">
+          Your Free Government Phone comes with unlimited talk, text, and data - no hidden fees or surprise charges. Plus, you'll receive a modern smartphone capable of handling apps, video calls, and internet browsing at high speeds.
+        </p>
+      </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">What You Get with Your Free Phone</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-lg p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background-color: var(--color-primary)">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Free Smartphone</h3>
+          </div>
+          <ul class="text-gray-700 space-y-2">
+            <li>• Latest Android smartphone at no cost</li>
+            <li>• High-resolution camera for photos and videos</li>
+            <li>• Large screen for easy viewing</li>
+            <li>• Pre-loaded with essential apps</li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-lg p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background-color: var(--color-primary)">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Unlimited Service</h3>
+          </div>
+          <ul class="text-gray-700 space-y-2">
+            <li>• Unlimited nationwide calling</li>
+            <li>• Unlimited text messaging</li>
+            <li>• High-speed data included</li>
+            <li>• No overage charges ever</li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-50 to-indigo-100 rounded-lg p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background-color: var(--color-primary)">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text

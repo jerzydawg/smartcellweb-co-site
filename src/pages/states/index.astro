@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const siteURL = getSiteURL();
+
+const pageTitle = `${keyword} by State - Find Local Programs | ${siteName}`;
+const description = "Find Free Government Phone programs in your state. State-by-state directory of Lifeline assistance programs with eligibility requirements and application processes.";
+const canonicalURL = `${siteURL}/states/`;
+
+const states = [
+  { name: 'Alabama', slug: 'alabama', code: 'AL' },
+  { name: 'Alaska', slug: 'alaska', code: 'AK' },
+  { name: 'Arizona', slug: 'arizona', code: 'AZ' },
+  { name: 'Arkansas', slug: 'arkansas', code: 'AR' },
+  { name: 'California', slug: 'california', code: 'CA' },
+  { name: 'Colorado', slug: 'colorado', code: 'CO' },
+  { name: 'Connecticut', slug: 'connecticut', code: 'CT' },
+  { name: 'Delaware', slug: 'delaware', code: 'DE' },
+  { name: 'Florida', slug: 'florida', code: 'FL' },
+  { name: 'Georgia', slug: 'georgia', code: 'GA' },
+  { name: 'Hawaii', slug: 'hawaii', code: 'HI' },
+  { name: 'Idaho', slug: 'idaho', code: 'ID' },
+  { name: 'Illinois', slug: 'illinois', code: 'IL' },
+  { name: 'Indiana', slug: 'indiana', code: 'IN' },
+  { name: 'Iowa', slug: 'iowa', code: 'IA' },
+  { name: 'Kansas', slug: 'kansas', code: 'KS' },
+  { name: 'Kentucky', slug: 'kentucky', code: 'KY' },
+  { name: 'Louisiana', slug: 'louisiana', code: 'LA' },
+  { name: 'Maine', slug: 'maine', code: 'ME' },
+  { name: 'Maryland', slug: 'maryland', code: 'MD' },
+  { name: 'Massachusetts', slug: 'massachusetts', code: 'MA' },
+  { name: 'Michigan', slug: 'michigan', code: 'MI' },
+  { name: 'Minnesota', slug: 'minnesota', code: 'MN' },
+  { name: 'Mississippi', slug: 'mississippi', code: 'MS' },
+  { name: 'Missouri', slug: 'missouri', code: 'MO' },
+  { name: 'Montana', slug: 'montana', code: 'MT' },
+  { name: 'Nebraska', slug: 'nebraska', code: 'NE' },
+  { name: 'Nevada', slug: 'nevada', code: 'NV' },
+  { name: 'New Hampshire', slug: 'new-hampshire', code: 'NH' },
+  { name: 'New Jersey', slug: 'new-jersey', code: 'NJ' },
+  { name: 'New Mexico', slug: 'new-mexico', code: 'NM' },
+  { name: 'New York', slug: 'new-york', code: 'NY' },
+  { name: 'North Carolina', slug: 'north-carolina', code: 'NC' },
+  { name: 'North Dakota', slug: 'north-dakota', code: 'ND' },
+  { name: 'Ohio', slug: 'ohio', code: 'OH' },
+  { name: 'Oklahoma', slug: 'oklahoma', code: 'OK' },
+  { name: 'Oregon', slug: 'oregon', code: 'OR' },
+  { name: 'Pennsylvania', slug: 'pennsylvania', code: 'PA' },
+  { name: 'Rhode Island', slug: 'rhode-island', code: 'RI' },
+  { name: 'South Carolina', slug: 'south-carolina', code: 'SC' },
+  { name: 'South Dakota', slug: 'south-dakota', code: 'SD' },
+  { name: 'Tennessee', slug: 'tennessee', code: 'TN' },
+  { name: 'Texas', slug: 'texas', code: 'TX' },
+  { name: 'Utah', slug: 'utah', code: 'UT' },
+  { name: 'Vermont', slug: 'vermont', code: 'VT' },
+  { name: 'Virginia', slug: 'virginia', code: 'VA' },
+  { name: 'Washington', slug: 'washington', code: 'WA' },
+  { name: 'West Virginia', slug: 'west-virginia', code: 'WV' },
+  { name: 'Wisconsin', slug: 'wisconsin', code: 'WI' },
+  { name: 'Wyoming', slug: 'wyoming', code: 'WY' }
+];
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": siteName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteName
+  },
+  "datePublished": "2025-12-11",
+  "dateModified": "2025-12-11",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL
+  }
+};
+
+const faqJsonLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do all states offer the same free phone programs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While the federal Lifeline program is available nationwide, each state may have additional local programs or specific providers. Some states offer enhanced benefits or additional qualifying programs beyond the federal requirements."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "Can I use my free government phone in any state?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, free government phones work nationwide. If you move to a different state, you can continue using your phone service. However, you may need to update your address with your provider to ensure proper service coverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find providers in my state?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each state page lists approved Lifeline providers serving that area. You can compare different providers' phone models, data plans, and coverage areas to choose the best option for your needs."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={description} canonical={canonicalURL}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLD)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLD)}></script>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-50 py-3" aria-label="Breadcrumb">
+    <div class="container mx-auto px-4">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li>
+          <a href="/" class="text-[var(--color-primary)] hover:underline">Home</a>
+        </li>
+        <li class="text-gray-500">›</li>
+        <li class="text-gray-700">States Directory</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Free Government Phone</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Find free phone programs in your state. Each state offers Lifeline assistance with local providers, coverage areas, and specific qualifying programs.
+      </p>
+      <a href="/apply" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg inline-block">
+        Apply Now
+      </a>
+    </div>
+
+    <!-- Intro Content -->
+    <section class="mb-12">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Find Your State's Free Phone Program</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          Every state participates in the federal Lifeline program, but each area has unique providers and local programs. When you get your Free Government Phone, you'll work with approved carriers that serve your specific region. These providers offer different phone models, data allowances, and network coverage to meet local needs.
+        </p>
+        <p class="text-lg text-gray-700 mb-6">
+          Your Free Government Phone works across state lines, so you can travel freely while keeping your service. Many states also partner with additional assistance programs beyond the standard federal requirements. Some regions offer extra data, upgraded devices, or simplified application processes for seniors and disabled residents.
+        </p>
+        <p class="text-lg text-gray-700">
+          Select your state below

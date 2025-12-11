@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = `Free Government Phone - All Free Phone Programs | ${siteName}`;
+const description = "Discover all free government phone programs available in 2025. Compare Lifeline, ACP, state programs, and special assistance to find your perfect free phone option.";
+const canonical = `${siteURL}/programs`;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Free Government Phone - All Free Phone Programs",
+      "description": description,
+      "author": {
+        "@type": "Organization",
+        "name": siteName,
+        "url": siteURL
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": siteName,
+        "url": siteURL
+      },
+      "datePublished": "2025-12-11",
+      "dateModified": "2025-12-11",
+      "mainEntityOfPage": canonical,
+      "url": canonical
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What free government phone programs are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Major programs include Lifeline providing discounted service, ACP offering internet discounts, state-specific assistance programs, and special programs for seniors and veterans."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "How do I choose the right free phone program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consider your data needs, coverage area, phone preferences, and which programs you qualify for based on income or assistance program participation."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLD={jsonLD}>
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-white shadow-sm border-b" aria-label="Breadcrumb">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ol class="flex items-center space-x-2 py-4 text-sm">
+          <li>
+            <a href="/" class="text-[var(--color-primary)] hover:underline">Home</a>
+          </li>
+          <li class="text-gray-500">/</li>
+          <li class="text-gray-900 font-medium">Programs</li>
+        </ol>
+      </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          Free Government Phone
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Explore every available free phone program to find the perfect match for your needs. Compare benefits, coverage, and eligibility requirements across all major assistance programs.
+        </p>
+        <a href="/apply" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg inline-block">
+          Get Your Free Phone Now
+        </a>
+      </div>
+
+      <!-- Main Content -->
+      <div class="grid lg:grid-cols-3 gap-12 mb-16">
+        <div class="lg:col-span-2">
+          <!-- Federal Programs Section -->
+          <section id="federal-programs" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+              <div class="w-8 h-8 rounded-full mr-3" style="background-color: var(--color-primary)"></div>
+              Federal Phone Programs
+            </h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <p class="text-gray-600 mb-6 text-lg">
+                The <span class="font-semibold" style="color: var(--color-primary)">Free Government Phone</span> programs at the federal level provide nationwide coverage and standardized benefits. These programs form the backbone of telecommunications assistance across America.
+              </p>
+              
+              <div class="space-y-6">
+                <div class="border-l-4 pl-6" style="border-color: var(--color-primary)">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">Lifeline Program</h3>
+                  <p class="text-gray-600 mb-3">
+                    Get monthly discounts on phone service plus a free smartphone from participating providers. This program reduces your monthly bill by up to $9.25 and includes unlimited talk and text.
+                  </p>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Monthly service discount up to $9.25</li>
+                    <li>• Free smartphone device</li>
+                    <li>• Unlimited talk and text</li>
+                    <li>• Available nationwide</li>
+                  </ul>
+                </div>
+
+                <div class="border-l-4 pl-6" style="border-color: var(--color-primary)">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">Affordable Connectivity Program (ACP)</h3>
+                  <p class="text-gray-600 mb-3">
+                    Receive up to $30 monthly toward internet service and a one-time discount of up to $100 for a tablet or computer purchase. Perfect for staying connected online.
+                  </p>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Up to $30 monthly internet discount</li>
+                    <li>• $100 device discount available</li>
+                    <li>• High-speed internet access</li>
+                    <li>• No credit checks required</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- State Programs Section -->
+          <section id="state-programs" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+              <div class="w-8 h-8 rounded-full mr-3" style="background-color: var(--color-primary)"></div>
+              State-Specific Programs
+            </h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+              <p class="text-gray-600 mb-6 text-lg">
+                Many states offer additional <span class="font-semibold" style="color: var(--color-primary)">Free Government Phone</span> benefits beyond federal programs. These state programs often provide enhanced coverage, extra data, or special devices tailored to local community needs.
+              </p>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">California LifeLine</h3>
+                  <p class="text-gray-600 text-sm mb-2">Enhanced discounts for California residents, including additional data allowances and premium device options.</p>
+                  <span class="text-xs px-3 py-1 rounded-full" style="background-color: var(--color-primary); color: white;">State Enhanced</span>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">New York ConnectED</h3>
+                  <p class="text-gray-600 text-sm mb-2">Specialized program for students and families, offering tablets and enhanced internet speeds for education.</p>
+                  <span class="text-xs px-3 py-1 rounded-full" style="background-color: var(--color-primary); color: white;">Education Focus</span>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Texas TeleConnect</h3>
+                  <p class="text-gray-600 text-sm mb-2">Rural-focused program providing enhanced coverage and satellite internet options for remote areas.</p>
+                  <span class="text-xs px-3 py-1 rounded-full" style="background-color: var(--color-primary); color: white;">Rural Coverage</span>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Florida Connect</h3>
+                  <p class="text-gray-600 text-sm mb-2">Senior-friendly program with larger buttons, emergency features, and health monitoring capabilities.</p>
+                  <span class="text-xs px-3 py-1 rounded-full" style="background-color: var(--color-primary); color: white;">Senior Focused</span>
+                </div>

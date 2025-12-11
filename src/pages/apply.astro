@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = `${keyword} - Apply in 2 Minutes | ${siteName}`;
+const description = 'Apply for your free government phone in just 2 minutes. Quick approval, no credit check required. Get free monthly service and data instantly.';
+const canonicalURL = `${siteURL}/apply`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": `${keyword} - Apply in 2 Minutes`,
+  "description": description,
+  "url": canonicalURL,
+  "datePublished": "2025-12-11T00:00:00Z",
+  "dateModified": "2025-12-11T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": siteName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteName,
+    "url": siteURL
+  }
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does the application take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The application takes just 2 minutes to complete online. Most people get approved instantly or within 24 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What documents do I need to apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need proof of income or participation in qualifying programs like SNAP, Medicaid, or WIC. A government ID is also required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a credit check required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No credit check is required for government phone programs. Approval is based on income or program participation only."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonicalURL}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  
+  <!-- Breadcrumb -->
+  <nav class="bg-gray-50 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="/" class="text-[var(--color-primary)] hover:underline">Home</a></li>
+        <li class="text-gray-500">/</li>
+        <li class="text-gray-900 font-medium">Apply</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{keyword}</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Get approved for your free phone and monthly service in just 2 minutes. No credit check, no deposit, no monthly bills.
+      </p>
+      <button class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg text-lg">
+        Start Your Application
+      </button>
+    </div>
+
+    <!-- Intro Section -->
+    <section id="intro" class="mb-12">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Quick & Easy Application Process</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          Applying for a Free Government Phone takes less time than ordering coffee. The government Lifeline program provides eligible Americans with free smartphones and monthly service at no cost. Over 40 million people already have their free phone - join them today.
+        </p>
+        <p class="text-lg text-gray-700 mb-6">
+          Your Free Government Phone comes with unlimited talk, text, and high-speed data every month. No contracts, no credit checks, and no surprise fees. Once approved, your phone ships within 2-3 business days directly to your door.
+        </p>
+        <p class="text-lg text-gray-700">
+          The application checks your eligibility instantly using government databases. Most people discover they qualify based on income or participation in programs like SNAP, Medicaid, or housing assistance. Start your application now and get connected.
+        </p>
+      </div>
+    </section>
+
+    <!-- Eligibility Checker -->
+    <section id="eligibility-checker" class="mb-12">
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Check If You Qualify</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          Most people qualify for a Free Government Phone through income or program participation. Check these common qualifying criteria:
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Income Requirements</h3>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <span class="w-2 h-2 style="background-color: var(--color-primary)" rounded-full mr-3"></span>
+                Household income at or below 135% of Federal Poverty Guidelines
+              </li>
+              <li class="flex items-center text-gray-700">
+                <span class="w-2 h-2 style="background-color: var(--color-primary)" rounded-full mr-3"></span>
+                Approximately $20,385/year for single person
+              </li>
+              <li class="flex items-center text-gray-700">
+                <span class="w-2 h-2 style="background-color: var(--color-primary)" rounded-full mr-3"></span>
+                $41,625/year for family of four
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Qualifying Programs</h3>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-700">
+                <span class="w-2 h-2 style="background-color: var(--color-primary)" rounded-full mr-3"></span>
+                SNAP (Food Stamps)
+              </li>
+              <li class="flex items-center text-gray-700">
+                <span class="w-2 h-2 style="background-color: var(--color-primary)" rounded-full mr-3"></span>
+                Medicaid
+              </li>
+              <li class="flex items-center text-gray-700">
+                <span class="w-2 h-2 style="background-color: var(--color-primary)" rounded-full mr-3"></span>
+                WIC, Section 8, SSI, or Veteran's Benefits
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <button class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg">
+            Check My Eligibility Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Steps -->
+    <section id="application-steps" class="mb-12">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">3 Simple Steps to Get Your Free Phone</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 style="background-color: var(--color-primary)" rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">1</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Apply Online</h3>
+            <p class="text-gray-700">Fill out the simple application form with your basic information. Takes just 2 minutes to complete.</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 style="background-color: var(--color-primary)" rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">2</div>

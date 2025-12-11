@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = "Free Internet Program - Emergency Broadband Benefits | Free Government Phone";
+const description = "Learn about the free internet program transition from Emergency Broadband Benefit to ACP. Get free internet service through government assistance programs.";
+---
+
+<Layout title={title} description={description}>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Free Internet Program - Emergency Broadband Benefits",
+    "description": description,
+    "author": {
+      "@type": "Organization",
+      "name": siteName
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteName,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteURL}/logo.png`
+      }
+    },
+    "datePublished": "2025-12-11",
+    "dateModified": "2025-12-11",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${siteURL}/emergency-broadband`
+    }
+  })} />
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What happened to the Emergency Broadband Benefit program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Emergency Broadband Benefit (EBB) program ended on December 31, 2021, and was replaced by the Affordable Connectivity Program (ACP) on January 1, 2022."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Can I still get free internet through government programs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can get free or discounted internet service through various government assistance programs and qualifying internet service providers."
+      }
+    }]
+  })} />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-100 py-3 mb-8">
+    <div class="max-w-6xl mx-auto px-4">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li><a href="/" class="text-[var(--color-primary)] hover:underline">Home</a></li>
+        <li class="text-gray-500">/</li>
+        <li class="text-gray-700">Emergency Broadband</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--color-primary)">Free Government Phone</h1>
+      <p class="text-xl text-gray-600 mb-8">Understanding the transition from Emergency Broadband Benefits to current free internet programs</p>
+      <a href="/apply" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg">Check Your Eligibility Today</a>
+    </header>
+
+    <!-- Main Content -->
+    <article class="prose max-w-none">
+      <!-- Introduction -->
+      <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--color-primary)">Free Internet Program Overview</h2>
+        <p class="text-lg text-gray-700 mb-4">
+          Many people are searching for information about the Emergency Broadband Benefit program, not realizing it transitioned to new assistance options. Getting a <strong>Free Government Phone</strong> often includes access to free internet service, making it easier than ever to stay connected. These programs help millions of Americans access essential online services without the burden of monthly bills.
+        </p>
+        <p class="text-lg text-gray-700">
+          Whether you're looking for free internet for work, school, or staying in touch with family, understanding your options can save you hundreds of dollars each year. The <strong>{siteName}</strong> program connects you with multiple assistance options that provide both phone service and internet access at no cost to qualified households.
+        </p>
+      </section>
+
+      <!-- What Was EBB -->
+      <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--color-primary)">What Was the Emergency Broadband Benefit?</h2>
+        <p class="text-lg text-gray-700 mb-4">
+          The Emergency Broadband Benefit (EBB) was a temporary program that provided monthly discounts on internet service and devices during the COVID-19 pandemic. It offered up to $50 per month toward internet service and up to $75 per month for households on qualifying tribal lands.
+        </p>
+        <p class="text-lg text-gray-700">
+          The EBB program officially ended on December 31, 2021, but it wasn't discontinued entirely. Instead, it evolved into the Affordable Connectivity Program (ACP), which continued providing internet assistance until April 2024. Now, other programs like <strong>Free Government Phone</strong> services fill this gap by offering bundled phone and internet benefits.
+        </p>
+      </section>
+
+      <!-- Transition to ACP -->
+      <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--color-primary)">From EBB to ACP and Beyond</h2>
+        <p class="text-lg text-gray-700 mb-4">
+          When the Emergency Broadband Benefit transitioned to the Affordable Connectivity Program in January 2022, many participants automatically transferred to the new program. The ACP provided up to $30 monthly discounts on internet service and up to $75 for eligible tribal households.
+        </p>
+        <p class="text-lg text-gray-700">
+          After the ACP ended in April 2024, many people wondered where to turn for internet assistance. Fortunately, wireless carriers and government phone programs stepped up to fill this need. Today's <strong>Free Government Phone</strong> programs often include substantial data allowances and hotspot capabilities, essentially providing free internet access through mobile networks.
+        </p>
+      </section>
+
+      <!-- Current Options -->
+      <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--color-primary)">Current Free Internet Options</h2>
+        <div class="bg-gray-50 p-6 rounded-lg mb-4">
+          <h3 class="text-xl font-semibold mb-3">Government Phone Programs with Data</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Free smartphones with unlimited talk and text</li>
+            <li>High-speed data allowances (often 15GB or more monthly)</li>
+            <li>Mobile hotspot capabilities for connecting other devices</li>
+            <li>No credit checks or activation fees required</li>
+          </ul>
+        </div>
+        <p class="text-lg text-gray-700 mb-4">
+          Getting your <strong>Free Government Phone</strong> through qualified programs means you receive both voice service and substantial data allowances. Many providers offer enough monthly data to handle video streaming, video calls, and web browsing without additional costs.
+        </p>
+        <p class="text-lg text-gray-700">
+          Some carriers also provide discounted home internet options for existing government phone customers, creating multiple pathways to affordable connectivity. These bundled services ensure you stay connected whether you're at home or on the go.
+        </p>
+      </section>
+
+      <!-- How to Apply -->
+      <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--color-primary)">How to Get Free Internet Service</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="border-2 border-gray-200 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary)">Quick Steps</h3>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Check your eligibility online</li>
+              <li>Gather required documentation</li>
+              <li>Choose your preferred carrier</li>
+              <li>Complete your application</li>
+              <li>Receive your free phone and service</li>
+            </ol>
+          </div>
+          <div class="border-2 border-gray-200 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3" style="color: var(--color-primary)">Required Documents</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Government-issued ID</li>
+              <li>Proof of income or benefit participation</li>
+              <li>Social Security card (if available)</li>
+              <li>Address verification</li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center mt-6">
+          <a href="/apply" class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange

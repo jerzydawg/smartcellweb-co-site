@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = "Free Government Phone - Get Your Free Phone Today";
+const description = "Find out how to get a free government phone in your state. Check eligibility requirements and apply for free phone service with unlimited talk, text, and data.";
+const url = `${siteURL}/state-programs`;
+---
+
+<Layout 
+  title={title}
+  description={description}
+  url={url}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": title,
+        "description": description,
+        "url": url,
+        "datePublished": "2025-12-11T00:00:00Z",
+        "dateModified": "2025-12-11T00:00:00Z",
+        "author": {
+          "@type": "Organization",
+          "name": siteName
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": siteName,
+          "url": siteURL
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": url
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I get a free phone in my state?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contact your state's Lifeline service provider or apply online through the federal Lifeline program. Each state has approved carriers that provide free phones and monthly service to qualified residents."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What documents do I need to qualify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You'll need proof of identity (ID or driver's license) and proof of benefits like SNAP, Medicaid, SSI, or federal housing assistance. Some states accept proof of low income instead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I get a free phone if I already have service?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, you cannot have active phone service from another carrier. The free government phone program allows only one Lifeline benefit per household."
+            }
+          }
+        ]
+      }
+    ]
+  }}
+>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-100 py-3 mb-8">
+    <div class="container mx-auto px-4">
+      <ol class="flex text-sm text-gray-600">
+        <li><a href="/" class="text-[var(--color-primary)] hover:underline">Home</a></li>
+        <li class="mx-2">/</li>
+        <li class="text-gray-900">State Programs</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-8">
+    <!-- Main Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Free Government Phone</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get your free smartphone and monthly service through state programs available nationwide. Check if you qualify and apply today.</p>
+    </div>
+
+    <!-- Hero CTA -->
+    <div class="text-center mb-16">
+      <a href="/apply" 
+         class="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg inline-block text-lg">
+        Check Eligibility Now
+      </a>
+    </div>
+
+    <!-- How to Get Free Phone Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">How to Get Your Free Phone by State</h2>
+      
+      <div class="prose max-w-none text-gray-700 text-lg leading-relaxed mb-8">
+        <p>Getting a <strong>Free Government Phone</strong> through your state is easier than most people think. Every state participates in the federal Lifeline program, which provides free phones and monthly service to qualified low-income residents. Your state has approved wireless carriers who handle applications and deliver phones directly to your door.</p>
+
+        <p>The process starts with finding your state's participating carriers. Most states work with major providers who offer the latest smartphones along with unlimited talk, text, and high-speed data. You don't need to visit government offices or deal with complicated paperwork - everything happens online or over the phone.</p>
+
+        <p>Each state sets its own additional qualifying programs beyond the federal requirements. While SNAP, Medicaid, and SSI qualify everywhere, your state might accept additional programs like TANF, WIC, or state-specific assistance programs. This means more people can get a <strong>Free Government Phone</strong> depending on where they live.</p>
+      </div>
+
+      <div class="bg-blue-50 border-l-4 border-[var(--color-primary)] p-6 mb-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Quick Application Steps:</h3>
+        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+          <li>Choose your state's approved carrier</li>
+          <li>Complete the online application form</li>
+          <li>Upload proof of benefits or income</li>
+          <li>Receive your phone within 7-10 business days</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">What Your Free Phone Includes</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg border">
+          <div class="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style="background-color: var(--color-primary)">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Unlimited Calling</h3>
+          <p class="text-gray-600">Make unlimited calls to anywhere in the US without worrying about minutes or overage charges.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg border">
+          <div class="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style="background-color: var(--color-primary)">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Unlimited Texting</h3>
+          <p class="text-gray-600">Send unlimited text messages to stay connected with family, friends, and important services.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg border">
+          <div class="w-12 h-12 rounded-full mb-4 flex items-center justify-center" style="background-color: var(--color-primary)">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-

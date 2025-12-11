@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = `${keyword} - Common Questions Answered | ${siteName}`;
+const description = "Get answers to your questions about free government phone programs. Learn about eligibility, application process, and service details for your free phone.";
+const canonicalURL = `${siteURL}/faq`;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "url": canonicalURL,
+      "datePublished": "2025-12-11",
+      "dateModified": "2025-12-11",
+      "author": {
+        "@type": "Organization",
+        "name": siteName
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": siteName,
+        "url": siteURL
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who qualifies for a free government phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You qualify if you participate in government assistance programs like SNAP, Medicaid, WIC, or SSI, or if your income is at or below 135% of the Federal Poverty Guidelines."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "How do I apply for a free phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Complete the application online or by phone with an approved provider. You'll need to provide proof of eligibility through benefit documents or income verification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What comes with my free phone service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most plans include unlimited talk and text, plus high-speed data ranging from 4.5GB to 15GB per month, depending on your provider."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout 
+  title={title}
+  description={description}
+  canonical={canonicalURL}
+  jsonLD={jsonLD}
+>
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-50 border-b" aria-label="Breadcrumb">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-2 py-4 text-sm">
+        <a href="/" class="text-[var(--color-primary)] hover:underline">Home</a>
+        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="text-gray-500">FAQ</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Free Government Phone</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Find answers to the most common questions about getting your free phone through government assistance programs.
+      </p>
+    </div>
+
+    <!-- Introduction -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+        <p class="text-lg leading-relaxed text-gray-700 mb-4">
+          Many people have questions about how the <strong>Free Government Phone</strong> program works. These programs help millions of Americans stay connected with family, employers, and emergency services at no cost. Below you'll find clear answers to help you understand eligibility requirements, the application process, and what services you'll receive.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700">
+          Whether you're applying for the first time or need help with your current service, this guide covers everything you need to know about getting and keeping your free phone benefits.
+        </p>
+      </div>
+    </section>
+
+    <!-- Eligibility FAQs -->
+    <section id="eligibility-faqs" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Eligibility Questions</h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white rounded-lg shadow-md p-6 border-l-4" style="border-left-color: var(--color-primary)">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Who qualifies for a free government phone?</h3>
+          <p class="text-gray-700 leading-relaxed">
+            You qualify if you participate in government assistance programs like SNAP (food stamps), Medicaid, WIC, SSI, Federal Housing Assistance, or Veterans Pension. You also qualify if your household income is at or below 135% of the Federal Poverty Guidelines, which varies by state and family size.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 border-l-4" style="border-left-color: var(--color-primary)">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Can I get a free phone if I already have a phone plan?</h3>
+          <p class="text-gray-700 leading-relaxed">
+            No, you cannot have active phone service with another carrier when applying for a <strong>Free Government Phone</strong>. The program is designed to provide communication access to those who otherwise couldn't afford it. You must cancel your existing service before applying.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 border-l-4" style="border-left-color: var(--color-primary)">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">How many people in my household can get free phones?</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Only one person per household can receive Lifeline benefits. This includes both free phone service and discounted internet. However, each household member may be eligible for their own Emergency Broadband Benefit or Affordable Connectivity Program discount.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application FAQs -->
+    <section id="application-faqs" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Application Process</h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white rounded-lg shadow-md p-6 border-l-4" style="border-left-color: var(--color-primary)">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">How do I apply for a free phone?</h3>
+          <p class="text-gray-700 leading-relaxed">
+            You can apply online through approved providers or call their customer service directly. You'll need to provide proof of eligibility, such as benefit award letters or pay stubs showing your income. Most applications are processed within 7-10 business days, and you'll receive your phone by mail.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 border-l-4" style="border-left-color: var(--color-primary)">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">What documents do I need to apply?</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Bring a government-issued ID (driver's license, state ID, or passport) and proof of program participation or income. This could be a SNAP EBT card, Medicaid card, SSI award letter, or recent pay stubs. Some providers accept digital photos of these documents for faster processing.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 border-l-4" style="border-left-color: var(--color-primary)">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">How long does approval take?</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Most <strong>Free Government Phone</strong> applications are approved within 7-10 business days. If you apply online and upload clear photos of your documents, approval may happen within 24-48 hours. Once approved, your phone typically arrives within 5-7 business days via standard shipping.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service FAQs -->
+    <section id="service-faqs" class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8

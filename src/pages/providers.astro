@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSiteName, getKeyword, getDomain, getSiteURL } from '../lib/site-config';
+
+const siteName = getSiteName();
+const keyword = getKeyword();
+const domain = getDomain();
+const siteURL = getSiteURL();
+
+const title = "Free Government Phone - Top Free Phone Providers | Free Government Phone";
+const description = "Compare the best free government phone providers. Find out which companies offer the best free phones, data plans, and coverage for Lifeline participants.";
+const canonicalURL = `${siteURL}/providers`;
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Free Government Phone - Top Free Phone Providers",
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": siteName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteName,
+    "url": siteURL
+  },
+  "datePublished": "2025-12-11",
+  "dateModified": "2025-12-11",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL
+  }
+};
+
+const faqJsonLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which provider offers the best free government phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best provider depends on your location and needs. SafeLink Wireless offers nationwide coverage, while Q Link Wireless provides generous data allowances. Check coverage in your area before choosing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I switch between free phone providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can switch providers, but you can only receive service from one Lifeline provider at a time. Contact your new provider to transfer your service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do all providers offer the same free phone benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, benefits vary by provider. Some offer more minutes, others provide better phones or more data. Compare plans to find what works best for your needs."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonicalURL}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLD)} />
+  </Fragment>
+
+  <main class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-white shadow-sm" aria-label="Breadcrumb">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-2 py-4 text-sm">
+          <a href="/" class="text-[var(--color-primary)] hover:underline">Home</a>
+          <span class="text-gray-500">/</span>
+          <span class="text-gray-900 font-medium">Providers</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold text-gray-900 mb-6">Free Government Phone</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Compare top free government phone providers and find the best service for your needs. Get free phones, unlimited talk and text, plus data allowances.
+        </p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <!-- Introduction -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Choose the Right Provider for Your Free Government Phone</h2>
+            <div class="prose prose-lg max-w-none text-gray-600">
+              <p>Finding the right provider for your Free Government Phone makes all the difference in your mobile experience. Multiple companies participate in the Lifeline program, each offering different phones, data amounts, and coverage areas. Your choice impacts everything from call quality to internet speeds.</p>
+              
+              <p>The best free phone providers combine reliable network coverage with generous monthly allowances. Some focus on providing the latest smartphones, while others emphasize data-heavy plans for streaming and browsing. Understanding these differences helps you pick a provider that matches your daily phone usage.</p>
+              
+              <p>Every Free Government Phone provider must meet federal requirements, but they compete by offering extra features and benefits. This competition works in your favor, giving you options to find exactly what you need without paying monthly fees.</p>
+            </div>
+          </section>
+
+          <!-- Top Providers -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Top Free Government Phone Providers</h2>
+            
+            <div class="space-y-8">
+              <!-- SafeLink Wireless -->
+              <div class="bg-white rounded-xl shadow-lg p-8 border-l-4" style="border-left-color: var(--color-primary)">
+                <div class="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">SafeLink Wireless</h3>
+                    <p class="text-[var(--color-primary)] font-semibold">Most Popular Choice</p>
+                  </div>
+                  <div class="text-4xl">📱</div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Monthly Benefits:</h4>
+                    <ul class="space-y-1 text-gray-600">
+                      <li>• Unlimited talk and text</li>
+                      <li>• 4.5GB high-speed data</li>
+                      <li>• Free Android smartphone</li>
+                      <li>• Nationwide coverage</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Special Features:</h4>
+                    <ul class="space-y-1 text-gray-600">
+                      <li>• International calling options</li>
+                      <li>• Easy online account management</li>
+                      <li>• Multiple phone upgrade options</li>
+                      <li>• 24/7 customer support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q Link Wireless -->
+              <div class="bg-white rounded-xl shadow-lg p-8 border-l-4" style="border-left-color: var(--color-primary)">
+                <div class="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Q Link Wireless</h3>
+                    <p class="text-[var(--color-primary)] font-semibold">Best for Data Users</p>
+                  </div>
+                  <div class="text-4xl">📶</div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Monthly Benefits:</h4>
+                    <ul class="space-y-1 text-gray-600">
+                      <li>• Unlimited talk and text</li>
+                      <li>• Up to 15GB data</li>
+                      <li>• Free smartphone included</li>
+                      <li>• T-Mobile network coverage</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Special Features:</h4>
+                    <ul class="space-y-1 text-gray-600">
+                      <li>• Mobile hotspot capability</li>
+                      <li>• Premium phone options</li>
+                      <li>• Fast application process</li>
+                      <li>• Referral rewards program</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TruConnect -->
+              <div class="bg-white rounded-xl shadow-lg p-8 border-l-4" style="border-left-color: var(--color-primary)">
+                <div class="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">TruConnect</h3>
+                    <p class="text-[var(--color-primary)] font-semibold">Best Phone Selection</p>
+                  </div>
+                  <div class="text-4xl">🎯</div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-semibold text-gray-900
