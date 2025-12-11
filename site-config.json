@@ -4,7 +4,25 @@
   "keyword": "Free Government Phone",
   "ownerEmail": "coolpilot4669@gmail.com",
   "designStyle": "advanced",
-  "designDNA": null,
+  "designDNA": {
+    "colors": {
+      "primary": "#1E3A8A",
+      "secondary": "#374151",
+      "accent": "#b3520f",
+      "background": "#F8FAFC",
+      "text": "#1F2937",
+      "textOnPrimary": "#FFFFFF"
+    },
+    "typography": {
+      "heading": "Inter",
+      "body": "Inter"
+    },
+    "shape": {
+      "buttonStyle": "rounded",
+      "cardStyle": "flat",
+      "borderRadius": 12
+    }
+  },
   "environment": "staging",
   "createdAt": "2025-12-11T14:49:01.826Z",
   "version": "1.0.0"

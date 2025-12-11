@@ -32,10 +32,32 @@ const SITE_CONFIG_DATA = {
   domain: "smartcellweb.co",
   siteName: "Free Government Phone",
   keyword: "Free Government Phone",
-  keywordId: "free-government-phone",
-  keywordLabel: "Free Government Phone",
   ownerEmail: "coolpilot4669@gmail.com",
   designStyle: "advanced" as DesignStyle,
+  designDNA: {
+      "colors": {
+          "primary": "#1E3A8A",
+          "secondary": "#374151",
+          "accent": "#b3520f",
+          "background": "#F8FAFC",
+          "text": "#1F2937",
+          "textOnPrimary": "#FFFFFF"
+      },
+      "fonts": {
+          "heading": "Inter",
+          "body": "Inter"
+      },
+      "advancedLayout": {
+          "heroVariant": "minimal",
+          "cardLayout": "grid-2",
+          "navStyle": "minimal",
+          "footerStyle": "simple",
+          "borderRadius": "none",
+          "shadowStyle": "none",
+          "spacing": "airy"
+      },
+      "visualStyle": "swiss-minimalist"
+  },
   environment: "staging" as const,
   createdAt: "2025-12-11T14:49:02.440Z",
   version: "1.0.0"
